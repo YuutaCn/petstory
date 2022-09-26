@@ -1,0 +1,260 @@
+.map {
+  width: 100%;
+  height: 1200px;
+  background-color: var(--white-color);
+
+  &__container {
+    padding-top: 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+  }
+
+  &__btn {
+    position: relative;
+    z-index: 1;
+    margin-top: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    &-real {
+      width: 298px;
+      height: 54px;
+      background-color: #FE9013;
+      border: none;
+      border-radius: 25px;
+      text-transform: uppercase;
+      color: var(--white-color);
+      transition: background-color 250ms var(--default-cubic);
+      cursor: pointer;
+
+      &:hover {
+        background-color: var(--orange_dark-color);
+      }
+
+      &:active {
+        background-color: var(--green-color);
+      }
+
+      &:disabled {
+        background-color: var(--gray-color);
+      }
+    }
+  }
+}
+
+.cards {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 366px);
+  grid-template-rows: repeat(2, 426px);
+  row-gap: 20px;
+  column-gap: 30px;
+  transform: translateX(0);
+  transition: transform 250ms var(--default-cubic);
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(6, 61px);
+  grid-template-rows: 366px 60px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background:
+    linear-gradient(to right, white, white),
+    var(--orange-color);
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  transition: transform 250ms var(--default-cubic) 100ms;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.01, 1.01) translateY(-15px);
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    grid-column: 1/7;
+    grid-row: 1/1;
+  }
+
+  &__text {
+    position: relative;
+    bottom: 5px;
+    grid-column: 1/6;
+    grid-row: 2/2;
+    padding-left: 16px;
+
+    &-h {
+      position: relative;
+      top: 1px;
+      color: var(--black-color);
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 140%;
+      text-transform: uppercase;
+    }
+
+    &-p {
+      color: var(--black-color);
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 120%;
+    }
+  }
+
+  &__nut {
+    position: relative;
+    left: 16px;
+    grid-column: 6/7;
+    grid-row: 2/2;
+  }
+
+  &-item-2,
+  &-item-4,
+  &-item-6,
+  &-item-7 {
+    & .card__nut {
+      top: -1px;
+      left: 5px;
+    }
+  }
+
+  &-item-1 {
+    grid-column: 1/2;
+    grid-row: 1/1;
+  }
+
+  &-item-2 {
+    grid-column: 2/3;
+    grid-row: 1/1;
+  }
+
+  &-item-3 {
+    grid-column: 1/2;
+    grid-row: 2/2;
+  }
+
+  &-item-4 {
+    grid-column: 3/4;
+    grid-row: 2/2;
+  }
+
+  &-item-5 {
+    grid-column: 3/4;
+    grid-row: 1/1;
+  }
+
+  &-item-6 {
+    grid-column: 4/5;
+    grid-row: 1/1;
+  }
+
+  &-item-7 {
+    grid-column: 2/3;
+    grid-row: 2/2;
+  }
+
+  &-item-8 {
+    grid-column: 4/5;
+    grid-row: 2/2;
+  }
+}
+
+.palm-img {
+  position: absolute;
+  margin-top: -360px;
+  z-index: 0;
+  left: 0;
+  width: 880px;
+  height: 460px;
+  object-fit: cover;
+  object-position: -588px 0px;
+}
+
+.strelitzia-img {
+  position: absolute;
+  margin-top: -176px;
+  z-index: 0;
+  right: 0;
+  width: 368px;
+  height: 275px;
+  object-fit: cover;
+  object-position: 0px 0px;
+}
+
+.pag-slider {
+  margin-top: -603px;
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+  height: 62px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+
+  &__right,
+  &__left {
+    position: relative;
+    margin: 0px 10.51vh;
+    width: 62px;
+    height: 62px;
+
+    &-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: var(--orange-color);
+      border: none;
+      cursor: pointer;
+      transition: background 250ms var(--default-cubic), transform 250ms var(--default-cubic);
+
+      &:hover {
+        transform: scale(1.2);
+
+        & .arrow-left,
+        & .arrow-right {
+          transform: scale(1.6);
+          fill: var(--green-color);
+        }
+      }
+
+      &:active {
+        background: var(--green-color);
+
+        & .arrow-left,
+        & .arrow-right {
+          fill: var(--white-color);
+        }
+      }
+
+      &:disabled {
+        background: var(--gray-color);
+      }
+
+      & .arrow-left,
+      & .arrow-right {
+        width: 40%;
+        height: 40%;
+        fill: var(--white-color);
+        transition: all 250ms var(--default-cubic);
+      }
+    }
+  }
+}
