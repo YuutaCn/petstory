@@ -133,6 +133,7 @@
 
   &__btn {
     position: relative;
+    z-index: 1;
     top: 69px;
     right: 99px;
     width: 298px;
@@ -162,8 +163,8 @@
     }
 
     @include mobile {
-      top: 0px;
-      right: 0px;
+      top: 76px;
+      right: 1px;
     }
 
     &:hover {
