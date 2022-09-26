@@ -1,0 +1,233 @@
+.header {
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  height: 80px;
+  background-color: var(--black-color);
+
+  @include small-tablet {
+    height: 34px;
+  }
+
+  @include mobile {
+    height: 34px;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  &__logo {
+    position: relative;
+    z-index: 3;
+    width: 82px;
+    height: 52px;
+    border: 1.18841px solid var(--white-color);
+    border-radius: 2px;
+    outline: solid 4px #FE901300;
+    outline-offset: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: outline 250ms var(--default-cubic), outline-offset 250ms var(--default-cubic);
+
+    @include small-tablet {
+      width: 46.86px;
+      height: 29.03px;
+      border: none;
+    }
+
+    @include mobile {
+      width: 46.86px;
+      height: 29.03px;
+      border: none;
+    }
+
+    & h1 {
+      position: relative;
+      top: 11.5px;
+      text-align: center;
+      color: var(--white-color);
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 19.0145px;
+      line-height: 120%;
+
+      @include small-tablet {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12.2899px;
+        line-height: 120%;
+        top: 7.5px;
+      }
+
+      @include mobile {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12.2899px;
+        line-height: 120%;
+        top: 7.5px;
+      }
+    }
+
+  }
+
+  &__nav {
+    position: relative;
+    left: -144px;
+
+    @include tablet {
+      left: -55px;
+    }
+
+    @include small-tablet {
+      display: none;
+    }
+
+    @include mobile {
+      display: none;
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: row;
+      gap: 58px;
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 140%;
+      color: var(--white-color);
+
+      @include tablet {
+        gap: 48px;
+      }
+    }
+
+    & a {
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 140%;
+      color: var(--white-color);
+      text-decoration: none;
+      background-image: linear-gradient(currentColor, currentColor);
+      background-position: 0% 100%;
+      background-repeat: no-repeat;
+      background-size: 0% 2px;
+      transition: background-size 200ms var(--default-cubic),
+        color 300ms var(--default-cubic);
+
+      &:hover {
+        // color: var(--green-color);
+        background-size: 100% 2px;
+      }
+
+      &:active {
+        background: var(--orange-color);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 100% 3px;
+      }
+    }
+  }
+
+  &__design {
+    display: flex;
+    justify-items: flex-end;
+    float: right;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+    color: var(--white-color);
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size 200ms var(--default-cubic),
+      color 300ms var(--default-cubic);
+
+    @include small-tablet {
+      display: none;
+    }
+
+    @include mobile {
+      display: none;
+    }
+
+    &:hover {
+      // color: var(--green-color);
+      background-size: 100% 2px;
+    }
+
+    &:active {
+      background: var(--orange-color);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 100% 3px;
+    }
+  }
+}
+
+.burger {
+  z-index: 3;
+  display: flex;
+  position: relative;
+  top: -1px;
+  justify-content: center;
+  align-items: center;
+  width: 18px;
+  height: 10px;
+  border: none;
+  background: transparent;
+  fill: var(--white-color);
+
+  @include small-tablet {
+    display: flex;
+  }
+
+  @include mobile {
+    display: flex;
+    top: 0;
+  }
+
+  &-icon {
+    width: 18px;
+    height: 10px;
+    fill: var(--white-color);
+
+    &:active {
+      fill: #FE9013;
+    }
+  }
+}
+
+.bamboo-svg {
+  position: relative;
+  width: 12px;
+  right: 25px;
+  bottom: 15px;
+
+  @include small-tablet {
+    width: 8px;
+    right: 17px;
+    bottom: 9px;
+  }
+
+  @include mobile {
+    width: 8px;
+    right: 17px;
+    bottom: 9px;
+  }
+}
