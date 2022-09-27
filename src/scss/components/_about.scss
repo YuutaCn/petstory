@@ -1,0 +1,228 @@
+.about {
+  width: 100%;
+  height: 694px;
+  overflow: hidden;
+
+  @include tablet {
+    height: 683px;
+  }
+
+  @include small-tablet {
+    height: 504px;
+  }
+
+  @include mobile {
+    height: 529px;
+  }
+
+  & .flower-img {
+    width: 293px;
+    height: 605px;
+    position: absolute;
+    z-index: 0;
+    right: 0;
+    margin-top: 13px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    object-fit: cover;
+    object-position: 93px 0;
+
+    @include tablet {
+      display: none;
+    }
+
+    @include small-tablet {
+      width: 231px;
+      height: 476px;
+      object-position: 102.5px -17px;
+    }
+
+    @include mobile {
+      width: 105px;
+      height: 217px;
+      object-position: 73px 25px;
+    }
+  }
+
+  &__container {
+    padding-top: 140px;
+    padding-bottom: 180px;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 609px 1fr;
+    grid-template-rows: 403px;
+    gap: 86px;
+    align-items: center;
+
+    @include tablet {
+      padding-top: 109px;
+      padding-bottom: 152px;
+      grid-template-columns: 455px 1fr;
+      grid-template-rows: 408px;
+      gap: 31px;
+    }
+
+    @include small-tablet {
+      padding-top: 60px;
+      padding-bottom: 80px;
+      grid-template-columns: 1fr;
+      grid-template-rows: 367px;
+    }
+
+    @include mobile {
+      padding-top: 104px;
+      padding-bottom: 40px;
+      grid-template-columns: 1fr;
+      grid-template-rows: 388px;
+    }
+  }
+
+  &__photo {
+
+    @include tablet {
+      width: 100%;
+      height: 100%;
+    }
+
+    @include small-tablet {
+      display: none;
+    }
+
+    @include mobile {
+      display: none;
+    }
+
+    & .bamboo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__text {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    @include small-tablet {
+      width: 495px;
+    }
+
+    &-h2 {
+      position: relative;
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 48px;
+      line-height: 120%;
+      color: var(--black_blue-color);
+
+      @include tablet {
+        bottom: 8.5px;
+      }
+
+      @include small-tablet {
+        left: 4px;
+      }
+
+      @include mobile {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 120%;
+      }
+    }
+
+    &-p1 {
+      position: relative;
+      bottom: 14px;
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 130%;
+      color: var(--black_blue-color);
+
+      @include tablet {
+        bottom: 17px;
+      }
+
+      @include small-tablet {
+        bottom: 2px;
+      }
+
+      @include mobile {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 130%;
+        bottom: 2px;
+        left: 2px;
+      }
+    }
+
+    &-h3 {
+      position: relative;
+      bottom: -5px;
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 120%;
+      color: var(--black_blue-color);
+
+      @include tablet {
+        bottom: -7px;
+      }
+
+      @include small-tablet {
+        left: 4px;
+      }
+
+      @include mobile {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 120%;
+        bottom: -5px;
+        left: 2px;
+      }
+    }
+
+    &-p2 {
+      position: relative;
+      bottom: -2px;
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 138%;
+      color: var(--black_blue-color);
+
+      @include tablet {
+        bottom: -10px;
+      }
+
+      @include small-tablet {
+        bottom: 0px;
+      }
+
+      @include mobile {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 138%;
+        bottom: 0;
+      }
+    }
+  }
+
+}
