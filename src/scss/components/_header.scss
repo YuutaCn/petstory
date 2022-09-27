@@ -120,7 +120,7 @@
       color: var(--white-color);
       text-decoration: none;
       background-image: linear-gradient(currentColor, currentColor);
-      background-position: 0% 100%;
+      background-position: 50% 100%;
       background-repeat: no-repeat;
       background-size: 0% 2px;
       transition: background-size 200ms var(--default-cubic),
@@ -152,7 +152,7 @@
     color: var(--white-color);
     text-decoration: none;
     background-image: linear-gradient(currentColor, currentColor);
-    background-position: 0% 100%;
+    background-position: 66% 100%;
     background-repeat: no-repeat;
     background-size: 0% 2px;
     transition: background-size 200ms var(--default-cubic),
