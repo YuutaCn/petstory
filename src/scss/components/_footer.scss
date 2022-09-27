@@ -447,7 +447,7 @@
         width: 228px;
         height: 42px;
         background: transparent;
-        border: 0.7px solid transparent;
+        border: 1px solid transparent;
         border-radius: 2px;
         background:
           linear-gradient(to right, #111115, #111115),
@@ -464,7 +464,7 @@
         outline: none;
 
         &:focus {
-          border: 0.7px solid var(--green-color);
+          border: 1px solid var(--green-color);
         }
 
         &::placeholder {
