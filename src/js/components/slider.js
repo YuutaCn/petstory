@@ -19,15 +19,29 @@ function slideCheck() {
 slideCheck();
 
 sliderRightButton.addEventListener('click', () => {
-  slide ++
-  slideCheck()
-  slideSwap -= document.querySelector('.card-item-1').offsetWidth + 30;
-  cards.style.transform = `translateX(${slideSwap}px)`;
+  if (window.screen.availWidth >= 999) {
+    slide ++
+    slideCheck()
+    slideSwap -= document.querySelector('.card-item-1').offsetWidth + 30;
+    cards.style.transform = `translateX(${slideSwap}px)`;
+  } else {
+    slide ++
+    slideCheck()
+    slideSwap -= document.querySelector('.card-item-1').offsetWidth + 30;
+    cards.style.transform = `translateX(${slideSwap * 2}px)`;
+  }
 });
 
 sliderLeftButton.addEventListener('click', () => {
+  if (window.screen.availWidth >= 999) {
   slide --
   slideCheck()
   slideSwap += document.querySelector('.card-item-1').offsetWidth + 30;
   cards.style.transform = `translateX(${slideSwap}px)`;
+  } else {
+    slide --
+    slideCheck()
+    slideSwap += document.querySelector('.card-item-1').offsetWidth + 30;
+    cards.style.transform = `translateX(${slideSwap * 2}px)`;
+  }
 });

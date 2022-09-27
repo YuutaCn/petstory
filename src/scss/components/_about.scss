@@ -3,6 +3,14 @@
   height: 683px;
   overflow: hidden;
 
+  @include small-tablet {
+    height: 504px;
+  }
+
+  @include mobile {
+    height: 529px;
+  }
+
   & .flower-img {
     width: 293px;
     height: 605px;

@@ -1,14 +1,29 @@
 .map {
+  margin-top: -12px;
   width: 100%;
-  height: 1200px;
   background-color: var(--white-color);
 
   &__container {
+    position: relative;
+    z-index: 2;
     padding-top: 40px;
     width: 100%;
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
+    overflow-y: visible;
+
+    @include tablet {
+      padding-top: 0px;
+    }
+
+    @include small-tablet {
+      padding-top: 15px;
+    }
+
+    @include mobile {
+      padding-top: 15px;
+    }
   }
 
   &__btn {
@@ -18,6 +33,14 @@
     width: 100%;
     display: flex;
     justify-content: center;
+
+    @include small-tablet {
+      margin-top: 60px;
+    }
+
+    @include mobile {
+      margin-top: 20px;
+    }
 
     &-real {
       width: 298px;
@@ -55,6 +78,24 @@
   column-gap: 30px;
   transform: translateX(0);
   transition: transform 250ms var(--default-cubic);
+
+  @include tablet {
+    grid-template-columns: repeat(4, 294px);
+    grid-template-rows: repeat(2, 354px);
+    row-gap: 92px;
+  }
+
+  @include small-tablet {
+    grid-template-columns: repeat(4, 285px);
+    grid-template-rows: repeat(2, 332px);
+    row-gap: 92px;
+  }
+
+  @include mobile {
+    grid-template-columns: 285px;
+    grid-template-rows: repeat(4, 332px);
+    left: -9px; // УБРАТЬ
+  }
 }
 
 .card {
@@ -76,8 +117,27 @@
   transition: transform 250ms var(--default-cubic) 100ms;
   cursor: pointer;
 
+  @include tablet {
+    grid-template-columns: repeat(6, 49px);
+    grid-template-rows: 294px 60px;
+  }
+
+  @include small-tablet {
+    grid-template-columns: repeat(6, 47.5px);
+    grid-template-rows: 285px 46px;
+  }
+
+  @include mobile {
+    grid-template-columns: repeat(6, 47.5px);
+    grid-template-rows: 285px 46px;
+  }
+
   &:hover {
-    transform: scale(1.01, 1.01) translateY(-15px);
+    transform: scale(1.01, 1.01) translateY(-10px) rotateZ(-1deg);
+
+    @include tablet {
+      transform: scale(0.98, 0.98) translateY(10px) rotateZ(-1deg);
+    }
   }
 
   &__image {
@@ -94,6 +154,14 @@
     grid-row: 2/2;
     padding-left: 16px;
 
+    @include small-tablet {
+      padding-left: 12.47px;
+    }
+
+    @include mobile {
+      padding-left: 12.47px;
+    }
+
     &-h {
       position: relative;
       top: 1px;
@@ -104,6 +172,24 @@
       font-size: 16px;
       line-height: 140%;
       text-transform: uppercase;
+
+      @include small-tablet {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12.5px;
+        line-height: 140%;
+        top: 3px;
+      }
+
+      @include mobile {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12.5px;
+        line-height: 140%;
+        top: 3px;
+      }
     }
 
     &-p {
@@ -113,6 +199,26 @@
       font-weight: 300;
       font-size: 15px;
       line-height: 120%;
+
+      @include small-tablet {
+        position: relative;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 11.7px;
+        line-height: 120%;
+        top: 1px;
+      }
+
+      @include mobile {
+        position: relative;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 11.7px;
+        line-height: 120%;
+        top: 1px;
+      }
     }
   }
 
@@ -121,6 +227,27 @@
     left: 16px;
     grid-column: 6/7;
     grid-row: 2/2;
+
+    @include tablet {
+      width: 33px;
+      height: 37px;
+      left: 2px;
+      top: -7px;
+    }
+
+    @include small-tablet {
+      width: 25.72px;
+      height: 28.84px;
+      left: 13px;
+      top: -1px;
+    }
+
+    @include mobile {
+      width: 25.72px;
+      height: 28.84px;
+      left: 13px;
+      top: -1px;
+    }
   }
 
   &-item-2,
@@ -130,6 +257,27 @@
     & .card__nut {
       top: -1px;
       left: 5px;
+
+      @include tablet {
+        width: 48px;
+        height: 38px;
+        top: -5px;
+        left: -9px;
+      }
+
+      @include small-tablet {
+        width: 37.41px;
+        height: 29.62px;
+        top: -3px;
+        left: 4px;
+      }
+
+      @include mobile {
+        width: 37.41px;
+        height: 29.62px;
+        top: -3px;
+        left: 4px;
+      }
     }
   }
 
@@ -141,36 +289,107 @@
   &-item-2 {
     grid-column: 2/3;
     grid-row: 1/1;
+
+    @include mobile {
+      grid-column: 1/2;
+      grid-row: 2/2;
+    }
   }
 
   &-item-3 {
     grid-column: 1/2;
     grid-row: 2/2;
+
+    @include tablet {
+      grid-column: 4/5;
+      grid-row: 1/1;
+    }
+
+    @include small-tablet {
+      grid-column: 3/4;
+      grid-row: 1/1;
+    }
+
+    @include mobile {
+      display: none;
+    }
   }
 
   &-item-4 {
     grid-column: 3/4;
     grid-row: 2/2;
+
+    @include mobile {
+      display: none;
+    }
   }
 
   &-item-5 {
     grid-column: 3/4;
     grid-row: 1/1;
+
+    @include tablet {
+      grid-column: 1/1;
+      grid-row: 2/2;
+    }
+
+    @include small-tablet {
+      grid-column: 1/2;
+      grid-row: 2/2;
+    }
+
+    @include mobile {
+      grid-column: 1/2;
+      grid-row: 3/3;
+    }
   }
 
   &-item-6 {
     grid-column: 4/5;
     grid-row: 1/1;
+
+    @include tablet {
+      grid-column: 2/3;
+      grid-row: 2/2;
+    }
+
+    @include small-tablet {
+      grid-column: 2/3;
+      grid-row: 2/2;
+    }
+
+    @include mobile {
+      grid-column: 1/2;
+      grid-row: 4/4;
+    }
   }
 
   &-item-7 {
     grid-column: 2/3;
     grid-row: 2/2;
+
+    @include tablet {
+      grid-column: 3/4;
+      grid-row: 1/1;
+    }
+
+    @include small-tablet {
+      grid-column: 4/5;
+      grid-row: 1/1;
+    }
+
+    @include mobile {
+      display: none;
+    }
   }
 
   &-item-8 {
     grid-column: 4/5;
     grid-row: 2/2;
+
+    @include mobile {
+      display: none;
+    }
   }
 }
 
@@ -183,6 +402,28 @@
   height: 460px;
   object-fit: cover;
   object-position: -588px 0px;
+
+  @include tablet {
+    width: 386px;
+    height: 202px;
+    margin-top: -63px;
+    object-position: -192px 0px;
+  }
+
+  @include small-tablet {
+    width: 385px;
+    height: 202px;
+    margin-top: -101px;
+    object-position: -251px 0px;
+  }
+
+  @include mobile {
+    width: 138px;
+    height: 72px;
+    margin-top: -12px;
+    object-position: -80px 0px;
+
+  }
 }
 
 .strelitzia-img {
@@ -194,17 +435,52 @@
   height: 275px;
   object-fit: cover;
   object-position: 0px 0px;
+
+  @include tablet {
+    width: 241px;
+    height: 180px;
+    margin-top: -42px;
+  }
+
+  @include small-tablet {
+    width: 175px;
+    height: 131px;
+    margin-top: -30px;
+  }
+
+  @include mobile {
+    width: 85px;
+    height: 71px;
+    margin-top: -7px;
+    object-position: 13px 0px;
+  }
 }
 
 .pag-slider {
   margin-top: -603px;
   position: absolute;
-  z-index: 0;
+  z-index: 3;
   width: 100%;
   height: 62px;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
+
+  @include tablet {
+    justify-content: center;
+    gap: 170px;
+    margin-top: -567px;
+  }
+
+  @include small-tablet {
+    justify-content: center;
+    gap: 30px;
+    margin-top: -527px;
+  }
+
+  @include mobile {
+    display: none;
+  }
 
   &__right,
   &__left {
@@ -212,6 +488,14 @@
     margin: 0px 10.51vh;
     width: 62px;
     height: 62px;
+
+    @include tablet {
+      margin: 0;
+    }
+
+    @include small-tablet {
+      margin: 0;
+    }
 
     &-btn {
       display: flex;
