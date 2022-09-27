@@ -70,11 +70,27 @@ import { burger } from './functions/burger';
 //   console.log(e.detail.dir);
 // });
 
-// import { validateForms } from './functions/validate-forms';
-// const rules1 = [...];
+import { validateForms } from './functions/validate-forms';
+const rules1 = [
+  {
+    ruleSelector: '.input-email',
+    rules: [
+      {
+        rule: 'minLength',
+        value: 1,
+        errorMessage: 'Введите Email!'
+      },
+      {
+        rule: 'email',
+        value: true,
+        errorMessage: 'Введите корректный Email!'
+      }
+    ]
+  },
+];
 
-// const afterForm = () => {
-//   console.log('Произошла отправка, тут можно писать любые действия');
-// };
+const afterForm = () => {
+  console.log('Произошла отправка, тут можно писать любые действия');
+};
 
-// validateForms('.form-1', rules1, afterForm);
+validateForms('.footer__form', rules1, afterForm);

@@ -16,7 +16,6 @@ const swiper = new Swiper('.massage', {
   slidesPerView: 4,
   spaceBetween: 30,
   simulateTouch: true,
-  slideToClickedSlide: true,
 
   breakpoints: {
     1600: {
@@ -27,6 +26,7 @@ const swiper = new Swiper('.massage', {
       slidesPerView: 3,
       scrollbar: {
         dragSize: 75,
+        draggable: true,
       },
     },
     640: {

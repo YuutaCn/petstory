@@ -1,7 +1,7 @@
 .contact {
   width: 100%;
   background: var(--white-color);
-  margin-bottom: 400px;
+  margin-bottom: 180px;
 
   &__container {
     display: flex;
@@ -75,6 +75,15 @@
       font-weight: 500;
       font-size: 16px;
       line-height: 140%;
+      transition: transform 250ms var(--default-cubic);
+
+      &:hover {
+        transform: scale(1.02);
+      }
+
+      &:active {
+        background: var(--orange_dark-color);
+      }
 
       @include small-tablet {
         width: 240px;
@@ -126,6 +135,11 @@
     padding: 14px 14px 0px 14px;
     display: flex;
     flex-direction: column;
+    transition: transform 250ms var(--default-cubic);
+
+    &:hover {
+      transform: rotateZ(-1deg) scale(1.01);
+    }
 
     @include tablet {
       max-width: 293px;
