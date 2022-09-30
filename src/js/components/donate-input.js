@@ -10,10 +10,11 @@ function dollarUpdate() {
   document.querySelector(`.paf__donate-widjet-amount-dollar-item-6`).style.color = '#333B41';
   document.querySelector(`.paf__donate-widjet-amount-dollar-item-7`).style.color = '#333B41';
   document.querySelector(`.paf__donate-widjet-amount-dollar-item-${dollarInput.value}`).style.color = '#FE9013';
-}
+};
+
 
 dollarInput.oninput = function () {
   dollarUpdate();
-}
+};
 
 dollarUpdate();

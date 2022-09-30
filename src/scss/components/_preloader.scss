@@ -1,0 +1,76 @@
+.loader {
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  background: var(--gray-color);
+
+  &_inner {
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: auto;
+
+    div {
+      color: rgba(255, 255, 255, 0.52);
+      font-size: 16px;
+      margin-top: 40px;
+      opacity: 1;
+      animation: load 2s .3s infinite alternate
+    }
+
+    .pawone {
+      top: -10px;
+    }
+
+    img {
+      margin-right: 17px;
+      width: 30px;
+      position: relative;
+      opacity: 0;
+
+      @for $i from 1 through 10 {
+        &:nth-of-type(#{$i}) {
+          animation: load 2s (1s + $i/6) infinite backwards;
+        }
+      }
+
+      @keyframes load {
+        0% {
+          opacity: 1
+        }
+
+        100% {
+          opacity: 0
+        }
+      }
+    }
+  }
+}
+
+.element-animation {
+  opacity: 0;
+  transform: translateX(20%);
+  transition: opacity 320ms var(--default-cubic), transform 320ms var(--default-cubic);
+}
+
+.element-animation-l {
+  opacity: 0;
+  transform: translateX(-20%);
+  transition: opacity 320ms var(--default-cubic), transform 320ms var(--default-cubic);
+}
+
+.element-animation-b {
+  opacity: 0;
+  transform: translateY(30%);
+  transition: opacity 320ms var(--default-cubic), transform 320ms var(--default-cubic);
+}
+
+.element-show {
+  transform: translateX(0%);
+  transform: translateY(0%);
+  opacity: 1;
+}

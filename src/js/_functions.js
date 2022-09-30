@@ -55,8 +55,8 @@ import { burger } from './functions/burger';
 // AOS.init();
 
 // Подключение параллакса блоков при скролле
-// import Rellax from 'rellax';
-// const rellax = new Rellax('.rellax');
+import Rellax from 'rellax';
+const rellax = new Rellax('.rellax');
 
 // Подключение плавной прокрутки к якорям
 // import SmoothScroll from 'smooth-scroll';
