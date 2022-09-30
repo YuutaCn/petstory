@@ -3,6 +3,18 @@
   background: var(--white-color);
   margin-bottom: 180px;
 
+  @include tablet {
+    margin-bottom: 141px;
+  }
+
+  @include small-tablet {
+    margin-bottom: 80px;
+  }
+
+  @include mobile {
+    margin-bottom: 60px;
+  }
+
   &__container {
     display: flex;
     flex-direction: column;
